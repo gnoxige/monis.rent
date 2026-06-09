@@ -66,6 +66,22 @@ export default function RootLayout({ children }) {
               loadIntoPage(url.toString(), 'push');
             }, true);
 
+            document.addEventListener('click', function (event) {
+              var link = event.target && event.target.closest ? event.target.closest('a[data-scroll-target]') : null;
+              if (!link) return;
+              var targetId = link.getAttribute('data-scroll-target');
+              if (!targetId) return;
+              var target = document.getElementById(targetId);
+              if (!target) return;
+              event.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              try {
+                var url = new URL(window.location.href);
+                url.hash = targetId;
+                window.history.replaceState({}, '', url.toString());
+              } catch (error) {}
+            }, true);
+
             window.addEventListener('popstate', function () {
               loadIntoPage(window.location.href, 'replace');
             });

@@ -101,7 +101,7 @@ function Hero() {
         <h1>Build Your<br />Bali <span className="soft">Office.</span></h1>
         <p className="sub">Pick a desk, a chair, the extras. Delivered, set up, and swapped whenever you like — one flat monthly price.</p>
         <div className="cta-row">
-          <a href="#builder" className="btn btn-light">
+          <a href="/?tab=desk#builder" data-scroll-target="builder" className="btn btn-light">
             Start Building <span className="arr"><Glyph.arrow style={{ width: 20, height: 20 }} /></span>
           </a>
           <span className="mono text-[13px]" style={{ color: "var(--on-dark-dim)" }}>from Rp 410K / mo</span>
