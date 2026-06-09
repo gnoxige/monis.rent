@@ -80,9 +80,9 @@ function Header({ count, total }) {
           <span className="mark"><i /></span>
           <span><b>monis</b><span className="dot">.rent</span></span>
         </a>
-        <a className="ghost" href="#summary">
+        <a className="ghost header-summary" href="#summary">
           <Glyph.cube />
-          <span className="mono">{formatShort(total)}</span>
+          <span className="mono header-summary-value">{formatShort(total)}</span>
           <span className="count">{count}</span>
         </a>
       </div>

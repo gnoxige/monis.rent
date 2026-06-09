@@ -176,6 +176,22 @@ header.bar.on-dark .logo .dot {
   font-weight: 500;
 }
 
+.header-summary {
+  gap: 10px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.header-summary svg {
+  flex: none;
+}
+
+.header-summary-value {
+  display: block;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 .ghost:hover {
   background: var(--ink);
   color: var(--paper);
@@ -1068,6 +1084,15 @@ footer.foot .wrap {
 }
 
 @media (max-width: 380px) {
+  .header-summary {
+    gap: 7px;
+    padding: 0 12px;
+  }
+
+  .header-summary-value {
+    font-size: 13px;
+  }
+
   .tab .tlabel {
     display: none;
   }
