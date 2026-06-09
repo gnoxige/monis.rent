@@ -1,21 +1,35 @@
 # Monis Rent
 
-This repository now ports the provided Claude Design ZIP into a deployable `Next.js` + `Tailwind CSS` app using the App Router.
+A deployable `Next.js` implementation of the `monis.rent` workspace configurator. The app lets users assemble a home office setup by selecting a desk, chair, and optional add-ons, then review the resulting monthly rental summary and proceed to a reserve state.
 
-## What was implemented
+## Project Overview
 
-- The real `monis.rent` workspace configurator from the ZIP handoff
-- Interactive desk, chair, and add-on selection
-- Live isometric SVG workspace preview
-- Rental summary and confirmation modal
+This project focuses on turning a design handoff into a production-ready web app rather than a static mock. The implementation keeps the configurator flow lightweight, shareable, and easy to deploy, while preserving the key product interactions:
 
-## Source bundle used
+- choose a desk
+- choose a chair
+- toggle add-ons
+- preview the setup live
+- review a rental summary
+- continue to a reserve screen
 
-The public handoff URL returned `HTTP 404`, so the implementation was based on the exported ZIP bundle you provided locally:
+## Tech Stack
 
-- `/Users/rizaldipratama/Downloads/monis.rent.zip`
+- `Next.js` App Router
+- `React`
+- `Tailwind CSS` with project-level global styling
+- lightweight SVG rendering for the live preview
 
-## Local development
+## Key Features
+
+- interactive workspace builder
+- URL-driven configuration state
+- live isometric SVG preview
+- rental summary with pricing breakdown
+- reserve / confirmation page
+- deployable on Vercel
+
+## Local Setup
 
 ```bash
 npm install
@@ -24,27 +38,37 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Push to a public GitHub repo
-
-1. Create a new public repository on GitHub.
-2. Run:
+To verify the production build:
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
+npm run build
 ```
 
-## Deploy to Vercel
+## Architecture / Approach
 
-1. Go to `https://vercel.com/new`
-2. Import your GitHub repository.
-3. Keep the default framework settings for `Next.js`.
-4. Click **Deploy**.
+I treated this as a design-to-product implementation. The main goal was to keep the experience stable and deployable while preserving the configurator interactions from the handoff.
 
-## If you want the real design implemented
+The app uses URL-driven state for the selected desk, chair, and add-ons. This makes the builder easy to refresh, share, and test, and avoids relying on fragile local-only UI state. Shared pricing and configuration logic live in one place so the builder, summary, and reserve flow all derive from the same source of truth.
 
-If you want me to finish the full publish flow too, I can do that once GitHub authentication works locally or if you give me your repo URL after creating it.
+For the live preview, I used SVG instead of introducing a heavier rendering layer. That keeps the page lightweight, crisp at different sizes, and easier to control for this kind of product configurator.
+
+## Tradeoffs
+
+- The reserve flow is intentionally lightweight and does not persist reservations to a database.
+- The builder prioritizes reliability and shareable state over a more complex client-side state architecture.
+- The live preview is illustrative and controlled through SVG composition rather than a full 3D scene.
+
+## What I’d Improve Next
+
+Given more time, I would focus on:
+
+1. stronger automated UI coverage for the builder and reserve flow
+2. more responsive refinement across edge-case screen sizes
+3. persistent backend handling for saved configurations or reservations
+4. richer accessibility and keyboard interaction coverage
+
+## Short Write-Up
+
+I approached this as a product implementation, not just a design recreation. The key decision was to keep the configurator stable, deployable, and easy to reason about while preserving the core user flow. `Next.js` was a good fit because it gives a clean deployment path on Vercel, and URL-driven state makes the builder shareable and resilient across reloads.
+
+The most important tradeoff was choosing simplicity and reliability over a more elaborate front-end state model. I also kept the visual preview in SVG so it stays lightweight and controllable without introducing unnecessary rendering complexity. With more time, I would invest in stronger automated QA, more responsive polish, and persistent reservation handling.
