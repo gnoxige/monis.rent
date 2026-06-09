@@ -184,6 +184,8 @@ header.bar.on-dark .logo .dot {
 
 .header-summary svg {
   flex: none;
+  width: 20px;
+  height: 20px;
 }
 
 .header-summary-value {
