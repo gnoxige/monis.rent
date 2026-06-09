@@ -220,8 +220,10 @@ header.bar.on-dark .ghost:hover {
 
 .hero .wrap {
   padding-top: 6vh;
-  padding-bottom: 9vh;
+  padding-bottom: max(140px, 18vh);
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -323,6 +325,7 @@ header.bar.on-dark .ghost:hover {
   right: 0;
   bottom: 0;
   border-top: 1px solid rgba(255, 255, 255, .1);
+  pointer-events: none;
 }
 
 .hero-meta .wrap {
@@ -1053,6 +1056,10 @@ footer.foot .wrap {
 @media (max-width: 760px) {
   .hero-faint {
     display: none;
+  }
+
+  .hero .wrap {
+    padding-bottom: 160px;
   }
 
   .hero-meta .cell:nth-child(n + 3) {
