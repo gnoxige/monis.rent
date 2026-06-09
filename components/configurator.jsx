@@ -96,19 +96,19 @@ function Hero() {
       <svg className="hero-faint" viewBox="0 0 400 344" aria-hidden="true">
         <SceneSVG deskId="standing" chairId="mesh" acc={{ monitor: true, lamp: true, plant: true }} />
       </svg>
-      <div className="wrap hero-grid">
-        <span className="eyebrow"><span className="ln" />Furniture rental · Bali</span>
-        <h1>Build Your<br />Bali <span className="soft">Office.</span></h1>
-        <p className="sub">Pick a desk, a chair, the extras. Delivered, set up, and swapped whenever you like — one flat monthly price.</p>
-        <div className="cta-row">
-          <a href="/?tab=desk#builder" data-scroll-target="builder" className="btn btn-light">
-            Start Building <span className="arr"><Glyph.arrow style={{ width: 20, height: 20 }} /></span>
-          </a>
-          <span className="mono text-[13px]" style={{ color: "var(--on-dark-dim)" }}>from Rp 410K / mo</span>
+      <div className="wrap">
+        <div className="hero-grid">
+          <span className="eyebrow"><span className="ln" />Furniture rental · Bali</span>
+          <h1>Build Your<br />Bali <span className="soft">Office.</span></h1>
+          <p className="sub">Pick a desk, a chair, the extras. Delivered, set up, and swapped whenever you like — one flat monthly price.</p>
+          <div className="cta-row">
+            <a href="/?tab=desk#builder" data-scroll-target="builder" className="btn btn-light">
+              Start Building <span className="arr"><Glyph.arrow style={{ width: 20, height: 20 }} /></span>
+            </a>
+            <span className="mono text-[13px]" style={{ color: "var(--on-dark-dim)" }}>from Rp 410K / mo</span>
+          </div>
         </div>
-      </div>
-      <div className="hero-meta">
-        <div className="wrap">
+        <div className="hero-meta">
           <div className="cell"><div className="k">Setup</div><div className="v"><Glyph.truck style={{ width: 16, height: 16 }} /> Free delivery</div></div>
           <div className="cell"><div className="k">Terms</div><div className="v"><Glyph.cal style={{ width: 16, height: 16 }} /> Monthly, no lock-in</div></div>
           <div className="cell"><div className="k">Swaps</div><div className="v"><Glyph.swap style={{ width: 16, height: 16 }} /> Anytime</div></div>

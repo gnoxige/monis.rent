@@ -212,18 +212,23 @@ header.bar.on-dark .ghost:hover {
   margin-top: calc(-1 * var(--head));
   padding-top: var(--head);
   min-height: 100svh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .hero .wrap {
   padding-top: 6vh;
-  padding-bottom: max(140px, 18vh);
+  padding-bottom: 42px;
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+.hero-grid {
+  min-height: calc(100svh - var(--head) - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .eyebrow {
@@ -320,17 +325,12 @@ header.bar.on-dark .ghost:hover {
 }
 
 .hero-meta {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  pointer-events: none;
-}
-
-.hero-meta .wrap {
+  position: relative;
   display: flex;
   gap: 0;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
 .hero-meta .cell {
@@ -1058,8 +1058,8 @@ footer.foot .wrap {
     display: none;
   }
 
-  .hero .wrap {
-    padding-bottom: 160px;
+  .hero-grid {
+    min-height: auto;
   }
 
   .hero-meta .cell:nth-child(n + 3) {
